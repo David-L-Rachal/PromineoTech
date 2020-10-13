@@ -1,9 +1,9 @@
-package instructor_stuff;
 
 public class factorial {
 
 	public static void main(String[] args) {
-		System.out.println("Answers is: " + factorial_rec(-4));
+		System.out.println("Answers is: " + factorial_for(-4));
+	
 	}
 	
 	
@@ -17,11 +17,11 @@ public class factorial {
 	}	
 	
 	public static int factorial_for(int myInt) {
-		int newInt = 1;
+		int newInt = 5;
 		//Im gonna * this to other values
 		
 		for(; myInt > 0; myInt--) {
-			newInt *= myInt;
+			newInt = myInt * newInt;
 		}
 		return newInt;
 	}

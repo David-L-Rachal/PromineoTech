@@ -1,4 +1,4 @@
-package instructor_stuff;
+
 
 public class Person {
 	private int age;
@@ -19,7 +19,7 @@ public class Person {
 		person1.setName("Adama");
 		person1.setJob("Admeral");
 		
-		System.out.printf("Age: %d Name: %s Job: %s\r\n", person1.getAge(), person1.getName(), person1.getJob() );
+		System.out.printf("Age: %d Name: %s Work: %s\r\n", person1.getAge(), person1.getName(), person1.getJob() );
 		
 	}
 

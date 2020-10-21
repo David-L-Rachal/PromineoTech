@@ -14,7 +14,7 @@ public class DataTypes {
 		// TODO Auto-generated method stub
 		
 		int iNumber1, iNumber2;
-		iNumber1 = 10;
+		iNumber1 = 65;
 		iNumber2 = 3;
 		byte bValue = 1;
 		long lNumber = 15;
@@ -28,14 +28,22 @@ public class DataTypes {
 		//System.out.println(dblNumber);
 		
 		
-		
+		/*
 		if (!(isValid & (iNumber1 == 10))) {
 			System.out.println(dblNumber);
 		}else {
 			System.out.println("OHHH NOOOOOO!");
 		}
 		
-		System.out.println(szString + szChar);
+		*/
+		System.out.println(szString + " " + iNumber1);
+		for(int i = 0; i <= 25; i++ ) {
+			System.out.println((char)(iNumber1 + i));
+			System.out.println((char)((iNumber1 + i) + 32));
+		}
+		
+		szString.charAt(1);
+		
 		
 		/*
 		  +

@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+public class SampleWeek3 {
+	
+	public static void main(String[] args) {
+		int[] iArray;
+		int[] iBuffer;
+		String[] szArray;
+		String[] szBuffer;
+		Scanner keyboard = new Scanner(System.in);
+		int iArrLen;
+		
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////  Populate String Array		
+		
+		System.out.println("Size of String array?");
+		iArrLen = keyboard.nextInt();
+		
+		szArray = new String[iArrLen];
+		
+		for(int i = 0; i < iArrLen; i++) {
+			System.out.println("String at index: "+ i);
+			//szArray[i] = keyboard.next();
+			szArray[i] = "String-" + i;
+			
+		}
+		
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////  Populate Integer Array		
+
+		System.out.println("Size of Integer array?");
+		iArrLen = keyboard.nextInt();
+		iArray = new int[iArrLen];
+		
+		for(int i = 0; i < iArrLen; i++) {
+			System.out.println("Integer at index: "+ i);
+			//iArray[i] = keyboard.nextInt();
+			iArray[i] = i;
+		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// -- Add an Element to the array		
+		
+		int[] iNewArray = new int[iArray.length + 1];
+		iNewArray = addToIntArray(iArray, 4);
+		iArray = new int[iNewArray.length];
+		iArray = iNewArray.clone();
+		iNewArray = null;
+		
+		for(int iMember : iArray) {		System.out.println(iMember);}
+		
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////-- Delete an Element to the array
+		
+		iNewArray = new int[iArray.length];
+		iNewArray = deleteIntArr(iArray, 4);
+		iArray = new int[iNewArray.length];
+		iArray = iNewArray.clone();
+		
+		for(int iMember : iArray) {		System.out.println(iMember);}
+		
+		
+	
+		// CLOSE YOUR DANG SCANNERS!!!
+		keyboard.close();
+		
+	}///END MAIN
+	
+	
+	/// ADD AN INTEGER TO THE ARRAY
+	public static int[] addToIntArray(int[] iArr, int iNew){
+		int iLen = iArr.length;
+		int[] iNewArray = new int[iLen + 1];
+		for(int i = 0; i < iLen ; i++) {
+			iNewArray[i] = iArr[i];
+		}
+		iNewArray[iLen] = iNew;
+		return iNewArray;
+	}
+	
+	// ADD A STRING TO THE ARRAY
+	public static String[] add2StrArray(String[] szArr, String szNew){
+		int iLen = szArr.length;
+		String[] szNewArray = new String[iLen + 1];
+		for(int i = 0; i < iLen ; i++) {
+			szNewArray[i] = szArr[i];
+		}
+		szNewArray[iLen] = szNew;
+		return szNewArray;
+	}
+	
+	// Delete an Integer from the Array
+	public static int[] deleteIntArr(int[] iArr, int iRemove) {
+		int iLoop = 0;
+		int iNewSize;
+		for(int i = 0; i < iArr.length; i++) {
+			if(iArr[i] == iRemove) {
+				iLoop++;
+			}
+		}
+		iNewSize = (iArr.length - iLoop);
+		iLoop = 0;
+		int[] iNewArray = new int[iNewSize];
+		for(int iAdd : iArr ) {
+			if(iAdd != iRemove) {
+				iNewArray[iLoop] = iAdd;
+				//System.out.println(iNewArray[iLoop]);
+				iLoop++;
+			}
+		}
+		return iNewArray;
+	}
+}
+
